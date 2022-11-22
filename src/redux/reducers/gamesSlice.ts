@@ -14,14 +14,14 @@ const initialState: GamesState = {
   error: '',
 };
 
-export const fetchGames = createAsyncThunk('games/fetchGames', async () => {
+export const fetchGames = createAsyncThunk('games/fetchGames', async (_, thunkAPI) => {
   try {
     const response = await axios.get<TGames[]>(
       `https://637bace46f4024eac21566d8.mockapi.io/games`
     );
     return response.data;
-  } catch (error: unknown) {
-    throw new Error('Cannot load data.');
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error)
   }
 });
 
