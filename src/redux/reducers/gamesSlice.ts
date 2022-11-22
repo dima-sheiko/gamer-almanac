@@ -5,7 +5,7 @@ import { TGames } from '../../@types/TGames';
 type GamesState = {
   games: TGames[];
   isLoading: boolean;
-  error: string;
+  error: unknown;
 };
 
 const initialState: GamesState = {
@@ -14,19 +14,16 @@ const initialState: GamesState = {
   error: '',
 };
 
-export const fetchGames = createAsyncThunk(
-  'games/fetchGames',
-  async (_, thunkAPI) => {
-    try {
-      const response = await axios.get(
-        `https://637bace46f4024eac21566d8.mockapi.io/games`
-      );
-      return response.data;
-    } catch (error) {
-      thunkAPI.rejectWithValue('Cannot load the data.');
-    }
+export const fetchGames = createAsyncThunk('games/fetchGames', async () => {
+  try {
+    const response = await axios.get<TGames[]>(
+      `https://637bace46f4024eac21566d8.mockapi.io/games`
+    );
+    return response.data;
+  } catch (error: unknown) {
+    throw new Error('Cannot load data.');
   }
-);
+});
 
 const gamesSlice = createSlice({
   name: 'games',
@@ -47,7 +44,7 @@ const gamesSlice = createSlice({
     builder.addCase(fetchGames.rejected, (state, action) => {
       state.games = [];
       state.isLoading = false;
-      state.error = String(action.payload);
+      state.error = action.payload;
     });
   },
 });
