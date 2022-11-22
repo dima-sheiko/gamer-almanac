@@ -4,5 +4,6 @@ export type TGames = {
   developer: string;
   year: number;
   genre: string;
+  picture: string;
   link: string;
 };
