@@ -3,13 +3,13 @@ import { createSlice } from '@reduxjs/toolkit';
 type FilterState = {
   searchValue: string;
   filterParam: string;
-  sortParam: 'name' | 'studio name' | 'year' | '';
+  sortParam: 'name' | 'studio name' | 'year';
 };
 
 const initialState: FilterState = {
   searchValue: '',
   filterParam: '',
-  sortParam: '',
+  sortParam: 'name',
 };
 
 const filterSlice = createSlice({
