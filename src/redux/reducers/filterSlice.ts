@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 type FilterState = {
   searchValue: string;
   filterParam: string;
-  sortParam: string;
+  sortParam: 'name' | 'studio name' | 'year' | '';
 };
 
 const initialState: FilterState = {
