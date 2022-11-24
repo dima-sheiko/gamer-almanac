@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { TGames } from '../../types/TGames';
+import { TGame } from '../../types/TGame';
 
 type FetchGamesParams = {
   filterParam: string;
@@ -8,7 +8,7 @@ type FetchGamesParams = {
 };
 
 type GamesState = {
-  games: TGames[];
+  games: TGame[];
   isLoading: boolean;
   error: unknown;
 };
@@ -24,7 +24,7 @@ export const fetchGames = createAsyncThunk(
   async (params: FetchGamesParams, thunkAPI) => {
     const { filterParam, sortParam } = params;
     try {
-      const response = await axios.get<TGames[]>(
+      const response = await axios.get<TGame[]>(
         `https://637bace46f4024eac21566d8.mockapi.io/games?&genre=${filterParam}&sortBy=${sortParam}`
       );
       return response.data;
@@ -44,7 +44,7 @@ const gamesSlice = createSlice({
     });
     builder.addCase(
       fetchGames.fulfilled,
-      (state, action: PayloadAction<TGames[]>) => {
+      (state, action: PayloadAction<TGame[]>) => {
         state.games = action.payload;
         state.isLoading = false;
         state.error = '';
