@@ -1,6 +1,5 @@
 import { TFilterOptions } from "../types/TFilterOptions";
 
-
 export const filterOptions: TFilterOptions[] = [
   { id: 1, name: 'All Genres', value: '' },
   { id: 2, name: 'Action', value: 'Action' },
