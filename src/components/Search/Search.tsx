@@ -19,6 +19,11 @@ export const Search = () => {
     debounceSearch(e.target.value);
   };
 
+  const onClearSearch = () => {
+    setValue('');
+    dispatch(setSearchValue(''));
+  };
+
   return (
     <div className={styles.wrapper}>
       <input
@@ -30,8 +35,8 @@ export const Search = () => {
         placeholder='Find your favorite game...'
       />
       {value && (
-        <button className={styles.clear} type='button'>
-          <img className={styles.icon} src={clear} alt='clear input'/>
+        <button className={styles.clear} onClick={onClearSearch} type='button'>
+          <img className={styles.icon} src={clear} alt='clear input' />
         </button>
       )}
     </div>
