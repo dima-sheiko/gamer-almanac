@@ -1,5 +1,6 @@
 import { AnyAction } from '@reduxjs/toolkit';
 import { useAppDispatch } from '../../hooks/redux';
+import styles from './Select.module.css'
 
 type Options = {
   id: number;
@@ -23,9 +24,9 @@ export const Select = ({ id, name, label, options, setValue }: SelectProps) => {
   };
 
   return (
-    <div>
-      <label htmlFor={id}>{label}</label>
-      <select name={name} id={id} onChange={onChangeSelect}>
+    <div className={styles.wrapper}>
+      <label className={styles.label} htmlFor={id}>{label}</label>
+      <select className={styles.select} name={name} id={id} onChange={onChangeSelect}>
         {options.map((option) => (
           <option key={option.id} value={option.value}>
             {option.name}
