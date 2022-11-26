@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
-.header {
+.title {
     font-family: 'Silkscreen', cursive;
     font-size: 3.75rem;
     text-align: center;
+    margin: 0;
 }
