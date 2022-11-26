@@ -1,0 +1,49 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  box-shadow: rgba(3, 3, 3, 0.2) 0px 8px 24px;
+  background-color: white;
+  transition: 0.5s;
+}
+
+.picture {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.info {
+  padding: 20px;
+}
+
+.info p {
+    margin-top: 10px;
+}
+
+.info p:first-of-type {
+    margin-top: 0px;
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+.info a {
+    display: block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    border-radius: 6px;
+    background-color: #fde2e4;
+    font-weight: bold;
+    color: inherit;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Pseudo */
+
+.info a:hover {
+    background-color: #ebcdcf;
+}
+
+.info a:active {
+    background-color: #d8bdbe;
+}
