@@ -5,5 +5,5 @@ type HeaderProps = {
 };
 
 export const Header = ({ title }: HeaderProps) => {
-  return <header className={styles.header}>{title}</header>;
+  return <header><h1 className={styles.title}>{title}</h1></header>;
 };
