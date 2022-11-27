@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
+import { HashLoader } from 'react-spinners';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { fetchGames } from '../../redux/reducers/gamesSlice';
 import { Card } from '../Card/Card';
+import styles from './CardsContainer.module.css';
 
 export const CardsContainer = () => {
   const { games, error, isLoading } = useAppSelector((state) => state.games);
@@ -24,10 +26,16 @@ export const CardsContainer = () => {
   );
 
   return (
-    <div>
+    <div className={styles.card_container}>
+      {isLoading && (
+        <div className={styles.loader}>
+          <HashLoader color='#464646' />
+        </div>
+      )}
       {content.map((game) => (
         <Card key={game.id} game={game} />
       ))}
+      {error ? <h3 className={styles.error}>Something went wrong...</h3> : ''}
     </div>
   );
 };
