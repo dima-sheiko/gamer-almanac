@@ -28,3 +28,15 @@
 .select:focus {
   outline: 2px solid rgba(238, 96, 214, 0.3);
 }
+
+@media (max-width: 494px) {
+  .wrapper {
+    width: 350px;
+  }
+}
+
+@media (max-width: 438px) {
+  .wrapper {
+    width: 300px;
+  }
+}

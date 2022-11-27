@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
 .title {
-    font-family: 'Silkscreen', cursive;
-    font-size: 3.75rem;
-    text-align: center;
-    margin: 0;
+  font-family: 'Silkscreen', cursive;
+  font-size: 3.75rem;
+  text-align: center;
+  margin: 0;
+}
+
+@media (max-width: 494px) {
+  .title {
+    font-size: 3.125rem;
+  }
 }

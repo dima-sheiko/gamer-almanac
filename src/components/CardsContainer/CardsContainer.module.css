@@ -14,3 +14,17 @@
 .error {
   justify-self: center;
 }
+
+/* Media Queries */
+
+@media (max-width: 494px) {
+  .card_container {
+    grid-template-columns: repeat(auto-fit, 350px);
+  }
+}
+
+@media (max-width: 438px) {
+  .card_container {
+    grid-template-columns: repeat(auto-fit, 300px);
+  }
+}
