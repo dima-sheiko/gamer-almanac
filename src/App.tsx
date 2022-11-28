@@ -5,8 +5,8 @@ import { Select } from './components/Select/Select';
 import { setFilterParam, setSortParam } from './redux/reducers/filterSlice';
 import { filterOptions } from './utils/FilterOptions';
 import { sortOptions } from './utils/SortOptions';
-import './styles/styles.css'
-import { ScrollUpButton } from './components/ScrollUpButton/ScrollUpButton'
+import './styles/styles.css';
+import { ScrollUpButton } from './components/ScrollUpButton/ScrollUpButton';
 
 export const App = () => {
   return (
@@ -28,7 +28,7 @@ export const App = () => {
         setValue={setSortParam}
       />
       <CardsContainer />
-     <ScrollUpButton />
+      <ScrollUpButton />
     </div>
   );
 };
