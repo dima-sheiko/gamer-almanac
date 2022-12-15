@@ -13,11 +13,11 @@ export const CardsContainer = () => {
 
   const dispatch = useAppDispatch();
 
-  const getGames = async () => {
-    dispatch(fetchGames({ filterParam, sortParam }));
-  };
-
   useEffect(() => {
+    const getGames = () => {
+      dispatch(fetchGames({ filterParam, sortParam }));
+    };
+
     getGames();
   }, [filterParam, sortParam]);
 
@@ -32,10 +32,8 @@ export const CardsContainer = () => {
           <HashLoader color='#464646' />
         </div>
       )}
-      {content.map((game) => (
-        <Card key={game.id} game={game} />
-      ))}
-      {error ? <h3 className={styles.error}>Something went wrong...</h3> : ''}
+      {!isLoading && content.map((game) => <Card key={game.id} game={game} />)}
+      {!!error && <h3 className={styles.error}>Something went wrong...</h3>}
     </div>
   );
 };
