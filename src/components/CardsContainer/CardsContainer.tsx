@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { HashLoader } from 'react-spinners';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { fetchGames } from '../../redux/reducers/gamesSlice';
@@ -21,8 +21,12 @@ export const CardsContainer = () => {
     getGames();
   }, [filterParam, sortParam]);
 
-  const content = games.filter((game) =>
-    game.title.toLowerCase().includes(searchValue.toLowerCase())
+  const content = useMemo(
+    () =>
+      games.filter((game) =>
+        game.title.toLowerCase().includes(searchValue.toLowerCase())
+      ),
+    [games, searchValue]
   );
 
   return (
