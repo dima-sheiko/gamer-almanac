@@ -1,15 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { ESortParam } from '../../types/ESortParam';
 
 type FilterState = {
   searchValue: string;
   filterParam: string;
-  sortParam: 'title' | 'developer' | 'year';
+  sortParam: ESortParam;
 };
 
 const initialState: FilterState = {
   searchValue: '',
   filterParam: '',
-  sortParam: 'title',
+  sortParam: ESortParam.Title,
 };
 
 const filterSlice = createSlice({
