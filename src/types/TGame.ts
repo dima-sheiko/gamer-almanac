@@ -1,9 +1,11 @@
 export type TGame = {
-  id: number;
+  id: string;
   title: string;
   developer: string;
   year: number;
   genre: string;
-  picture: string;
+  header: string;
+  trailer: string;
+  screenshots: string[];
   link: string;
 };

@@ -8,7 +8,7 @@ type CardProps = {
 export const Card = ({ game }: CardProps) => {
   return (
     <div className={styles.wrapper}>
-      <img className={styles.picture} src={game.picture} alt='game artwork' />
+      <img className={styles.picture} src={game.header} alt='game artwork' />
       <div className={styles.info}>
         <p>{game.title}</p>
         <p>{game.developer}</p>
