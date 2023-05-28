@@ -36,7 +36,12 @@ export const CardsContainer = () => {
           <HashLoader color='#464646' />
         </div>
       )}
-      {!isLoading && content.map((game) => <Card key={game.id} game={game} />)}
+      {content.map((game) => (
+        <Card
+          key={game.id}
+          game={game}
+        />
+      ))}
       {!!error && <h3 className={styles.error}>Something went wrong...</h3>}
     </div>
   );
